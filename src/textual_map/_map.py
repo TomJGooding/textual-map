@@ -32,7 +32,7 @@ class Map(Static):
         worker = get_current_worker()
         temp_image_file = tempfile.TemporaryFile()
         # Create Choropleth map if required
-        ax = self.geodataframe.plot()  # type: ignore
+        ax = self.geodataframe.plot(column=self.column)  # type: ignore
         # Remove axis labels
         ax.set_axis_off()
         # Save as temporory image
